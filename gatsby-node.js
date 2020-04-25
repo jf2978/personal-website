@@ -1,3 +1,8 @@
+/**
+ *  Runs once in the process of building the site to load plugins, create pages,
+ *  add nodes to GraphQL or respond to build lifecycle events.
+ */
+
 const _ = require('lodash');
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');

@@ -1,7 +1,7 @@
 /**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
+ * The Gatsby Server-Side Rendering API which hooks into when Gatsby
+ * actually generates the page (since Gatsby doesn't make server-side requests,
+ * this will be at build time).
  *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
+ * Examples: injecting HTML/CSS into the rendered output, using third-party scripts
  */
-
-// You can delete this file if you're not using it
