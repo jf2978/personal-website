@@ -7,9 +7,13 @@ const _ = require('lodash');
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+// createPages is the API function responsible for programmatically creating new pages (calls the createPage "action" internally)
+// Note that Gatsby automatically generates pages from the files that live in src/pages
 
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions; // grab actions we'll be using
+
+  // resolve the filepaths for any existing page templates
   const postTemplate = path.resolve(`src/templates/post-template.js`);
   const tagTemplate = path.resolve(`src/templates/tags-template.js`);
   const blogListTemplate = path.resolve(`./src/templates/blog-list-template.js`);
