@@ -1,6 +1,10 @@
 /**
+ *  ==== GATSBY NODE APIs ====
+ *
  *  Runs once in the process of building the site to load plugins, create pages,
  *  add nodes to GraphQL or respond to build lifecycle events.
+ *
+ * Reference: https://www.gatsbyjs.org/docs/node-apis/
  */
 
 const _ = require('lodash');
@@ -8,8 +12,8 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 // createPages is the API function responsible for programmatically creating new pages (calls the createPage "action" internally)
-// Note that Gatsby automatically generates pages from the files that live in src/pages
-
+// Here, we query for blog posts (using the gatsby-transformer-remark plugin),
+// and create blog pages themselves, tag pages, and a paginated blog list
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions; // grab actions we'll be using
 
@@ -98,6 +102,28 @@ exports.createPages = ({ actions, graphql }) => {
   });
 };
 
+/**
+ * ==== UNDERSTANDING GATSBY NODES ====
+ *
+ * A Gatsby "node" is a construct that models data within Gatsby. The nuances
+ * to how these are created are still a bit fuzzy for me but from what I understand so far:
+ *
+ * A node can be any object that you want Gatsby to manage the state of (internally
+ * managed by Redux here). At first glance at the docs, it looks to be stored using
+ * a "flat" tree data structure where the node itself has an associated id and
+ * it's children as an array of ids.
+ *
+ * e.g. { "id1": { type: "stuff", children: ["id2", "id3"] ... }
+ *      (id1)
+ *    /      \
+ *  (id2)   (id3)
+ *
+ * Reference: https://www.gatsbyjs.org/docs/node-creation/
+ */
+
+// onCreateNode is an API function that hooks in after a data node has been created.
+// Here, if the created node is a MarkdownRemark, create the "slug" (path) with the
+// newly created node hooked into here as the target node for this new slug "field"
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
