@@ -8,15 +8,18 @@ import Button from "../components/button"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <Button buttonText="Click Me!!" />
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <SEO title="Jeffrey Fabian" />
+    <h1>Hey, I'm Jeff</h1>
+    <p>
+      Professional software engineer, passionate thinker and aspiring creator — at least that's who I think I am.
+      Instead of trying to organize my nuanced, fluid and vivid life experiences into simple, discrete and digestible bullet points for the sake of filling a job description, I just want to start documenting my life.
+      I created this site to share my reflections and incomplete thoughts, not to publish a curated snapshot of who I want you to think I am.
+      And maybe along te way, I'll start to get a better sense of who I actually am.
+    </p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Link to="/page-2/">My Journey</Link>
   </Layout>
 )
 
