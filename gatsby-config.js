@@ -1,3 +1,7 @@
+/**
+ * Gatsby Config contains this site's metadata and list of plugin sources
+ */
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
