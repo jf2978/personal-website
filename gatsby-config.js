@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-less`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
     `gatsby-remark-prismjs`,
