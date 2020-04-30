@@ -135,3 +135,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+// onCreateWebpackConfig hooks into the lifecycle and allows us to mutate the site's webpack config.
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+   resolve: {
+    alias: { "../../theme.config$": path.join(__dirname,  "src/semantic/theme.config")}
+   }
+  });
+ };
