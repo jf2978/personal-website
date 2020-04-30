@@ -5,7 +5,7 @@
 module.exports = {
   siteMetadata: {
     title: `My Journey`,
-    siteUrl: `jfabian.me`,
+    siteUrl: `https://jfabian.me`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@jf2978`,
   },
