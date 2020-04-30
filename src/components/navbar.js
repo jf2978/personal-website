@@ -1,44 +1,52 @@
+// Packages
 import React from "react"
 import PropTypes from "prop-types"
 import { Segment, Menu } from "semantic-ui-react"
 
+// Styles
 import "./layout.css"
 import '../styles/styles.scss';
 import 'semantic-ui-less/semantic.less';
+import { StaticQuery } from "gatsby";
 
-import styles from "./styles/navbar.module.scss"
+const NavBar = () => (
+  <Segment inverted>
+    <Menu inverted pointing secondary>
+      <Menu.Item
+        name='home'
+      />
+      <Menu.Item
+        name='journey'
+      />
+      <Menu.Item
+        name='blog'
+      />
+    </Menu>
+  </Segment>
+)
 
-console.log(styles)
-
-const NavBar = ({ children }) => {
-
-  return (
-    <>
-      <Segment inverted>
-        <Menu inverted pointing secondary>
-          <Menu.Item
-            name='home'
-            //active={activeItem === 'home'}
-            //onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='messages'
-            //active={activeItem === 'messages'}
-            //onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='friends'
-            //active={activeItem === 'friends'}
-            //onClick={this.handleItemClick}
-          />
-        </Menu>
-      </Segment>
-    </>
-  )
-}
+export const props = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => <NavBar data={data} {...props} />}
+  />
+)
 
 NavBar.propTypes = {
-  children: PropTypes.node.isRequired,
+  name: PropTypes.string,
+  active: PropTypes.bool,
+}
+
+NavBar.defaultProps = {
+  name: ``
 }
 
 export default NavBar
