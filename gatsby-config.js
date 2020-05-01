@@ -4,15 +4,31 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `My Journey`,
+    menuLinks: [
+      {
+        name: `home`,
+        link: `/`
+      },
+      {
+        name: `journey`,
+        link: `/journey`
+      },
+      {
+        name: `blog`,
+        link: `/blog`
+      }
+    ],
+    siteUrl: `https://jfabian.me`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@jf2978`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-less`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
     `gatsby-remark-prismjs`,
