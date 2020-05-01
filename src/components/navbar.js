@@ -7,7 +7,7 @@ import { Segment, Menu } from "semantic-ui-react"
 import "./layout.css"
 import '../styles/styles.scss';
 import 'semantic-ui-less/semantic.less';
-import { StaticQuery, Link } from "gatsby";
+import { graphql, StaticQuery, Link } from "gatsby";
 
 const NavBar = ({menuLinks}) => (
   <Segment inverted>
