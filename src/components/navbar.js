@@ -4,7 +4,7 @@ import { Menu, Container } from "semantic-ui-react"
 import "./layout.css"
 import "../styles/styles.scss";
 import "semantic-ui-less/semantic.less";
-import { graphql, StaticQuery, Link } from "gatsby";
+import { Link } from "gatsby";
 
 const NavBar = () => (
   <Menu pointing secondary>
@@ -14,24 +14,6 @@ const NavBar = () => (
       <Menu.Item as={Link} to="/blog" activeClassName="active" name="blog"/>
     </Container>
   </Menu>
-)
-
-export const props = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            menuLinks {
-              name
-              link
-            }
-          }
-        }
-      }
-    `}
-    render={data => <NavBar menuLinks={data.site.siteMetadata.menuLinks} {...props} />}
-  />
 )
 
 NavBar.propTypes = {
