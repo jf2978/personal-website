@@ -5,6 +5,20 @@
 module.exports = {
   siteMetadata: {
     title: `My Journey`,
+    menuLinks: [
+      {
+        name: `home`,
+        link: `/`
+      },
+      {
+        name: `journey`,
+        link: `/journey`
+      },
+      {
+        name: `blog`,
+        link: `/blog`
+      }
+    ],
     siteUrl: `https://jfabian.me`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@jf2978`,

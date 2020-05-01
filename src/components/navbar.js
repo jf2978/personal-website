@@ -7,20 +7,14 @@ import { Segment, Menu } from "semantic-ui-react"
 import "./layout.css"
 import '../styles/styles.scss';
 import 'semantic-ui-less/semantic.less';
-import { StaticQuery } from "gatsby";
+import { StaticQuery, Link } from "gatsby";
 
-const NavBar = () => (
+const NavBar = ({menuLinks}) => (
   <Segment inverted>
     <Menu inverted pointing secondary>
-      <Menu.Item
-        name='home'
-      />
-      <Menu.Item
-        name='journey'
-      />
-      <Menu.Item
-        name='blog'
-      />
+      <Menu.Item as={Link} to="/" activeClassName='active' name='home'/>
+      <Menu.Item as={Link} to="/journey" activeClassName='active' name='journey'/>
+      <Menu.Item as={Link} to="/blog" activeClassName='active' name='blog'/>
     </Menu>
   </Segment>
 )
@@ -28,15 +22,18 @@ const NavBar = () => (
 export const props = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         site {
           siteMetadata {
-            title
+            menuLinks {
+              name
+              link
+            }
           }
         }
       }
     `}
-    render={data => <NavBar data={data} {...props} />}
+    render={data => <NavBar menuLinks={data.site.siteMetadata.menuLinks} {...props} />}
   />
 )
 
