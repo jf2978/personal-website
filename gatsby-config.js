@@ -69,5 +69,20 @@ module.exports = {
         trackingId: 'UA-163941778-1',
       },
     },
-  ],
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Cairo`,
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Roboto`,
+            subsets: [`latin`]
+          },
+        ],
+      },
+    }
+  ]
 }
