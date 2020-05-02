@@ -5,20 +5,6 @@
 module.exports = {
   siteMetadata: {
     title: `My Journey`,
-    menuLinks: [
-      {
-        name: `home`,
-        link: `/`
-      },
-      {
-        name: `journey`,
-        link: `/journey`
-      },
-      {
-        name: `blog`,
-        link: `/blog`
-      }
-    ],
     siteUrl: `https://jfabian.me`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@jf2978`,
@@ -83,5 +69,20 @@ module.exports = {
         trackingId: 'UA-163941778-1',
       },
     },
-  ],
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Cairo`,
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Roboto`,
+            subsets: [`latin`]
+          },
+        ],
+      },
+    }
+  ]
 }
