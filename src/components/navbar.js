@@ -8,11 +8,9 @@ import { Link } from "gatsby";
 
 const NavBar = () => (
   <Menu pointing secondary>
-    <Container fluid>
-      <Menu.Item as={Link} to="/" activeClassName="active" name="home" position="right"/>
-      <Menu.Item as={Link} to="/journey" activeClassName="active" name="journey"/>
-      <Menu.Item as={Link} to="/blog" activeClassName="active" name="blog"/>
-    </Container>
+    <Menu.Item as={Link} to="/" activeClassName="active" name="home" position="right"/>
+    <Menu.Item as={Link} to="/journey" activeClassName="active" name="journey"/>
+    <Menu.Item as={Link} to="/blog" activeClassName="active" name="blog"/>
   </Menu>
 )
 
