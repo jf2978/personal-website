@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Menu, Container } from "semantic-ui-react"
+import { Menu } from "semantic-ui-react"
 import "./layout.css"
 import "../styles/styles.scss";
 import "semantic-ui-less/semantic.less";
