@@ -1,20 +1,25 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-// components
 import NavBar from "./navbar"
-
-// styles
-import "./layout.css"
-import "../styles/styles.scss"
 import { Container } from "semantic-ui-react"
+import "semantic-ui-less/semantic.less";
+import styled from "@emotion/styled";
 
-const Layout = ({ children }) => {
+const StyledContainer = styled(Container)`
+  background-image: url(${props => props.background});
+  filter: grayscale(80%);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`
+
+const Layout = ({ background, children }) => {
   return (
-    <Container fluid>
+    <StyledContainer background={background} fluid>
       <NavBar></NavBar>
       <main>{children}</main>
-    </Container>
+    </StyledContainer>
   )
 }
 

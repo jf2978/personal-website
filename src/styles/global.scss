@@ -1,0 +1,10 @@
+// Getting Gatsby parent divs to allow 100% height
+// source: https://dev.to/hzburki/100-height-to-all-divs-gatsby-33nd
+
+html, body, #___gatsby, #gatsby-focus-wrapper{
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}

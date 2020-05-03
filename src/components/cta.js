@@ -1,20 +1,39 @@
 import React from "react"
-
-import ctaStyles from "./styles/cta.module.scss"
 import { Container} from "semantic-ui-react";
-import "semantic-ui-less/semantic.less";
+import styled from "@emotion/styled";
 
+
+const Label = styled('p')`
+
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Cairo', sans-serif;
+  display: inline-block;
+
+  &:after {
+    content: '';
+    width: 0px;
+    height: 4px;
+    display: inline-block;
+    background: black;
+    transition: 300ms;
+  }
+
+  &:hover:after {
+    width: 140%;
+    margin-left: -20%;
+  }
+`
 
 const CTA = ({ label }) => {
 
   return (
     <Container text textAlign="center">
-      <p className={ctaStyles.cta}>
+      <Label>
         {label}
-      </p>
+      </Label>
     </Container>
   )
 }
 
 export default CTA
-
