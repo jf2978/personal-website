@@ -15,7 +15,6 @@ const IndexPage = () => (
     <SEO title="Jeffrey Fabian" />
     <HomepageHeader title={headerTitle} />
     <Blurb text={blurbText} />
-    <Link to="/page-2/" My Journey />
     <CTA label={ctaLabel} />
   </Layout>
 )

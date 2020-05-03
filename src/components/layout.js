@@ -1,17 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-// components
 import NavBar from "./navbar"
-
-// styles
-import "./layout.css"
-import "../styles/styles.scss"
 import { Container } from "semantic-ui-react"
+import layoutStyles from "./styles/layout.module.scss"
 
 const Layout = ({ children }) => {
   return (
-    <Container fluid>
+    <Container className={layoutStyles.container} fluid>
       <NavBar></NavBar>
       <main>{children}</main>
     </Container>
