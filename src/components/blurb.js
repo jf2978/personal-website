@@ -1,7 +1,8 @@
 import React from "react"
-
-import blurbStyles from "./styles/blurb.module.scss";
+import PropTypes from "prop-types"
 import { Container, Divider } from "semantic-ui-react";
+import blurbStyles from "./styles/blurb.module.scss";
+
 
 // Blurb is a basic text abstraction created in order to leverage component-scoped styles
 // and make it available for future re-use the style if needed later
@@ -20,6 +21,14 @@ const Blurb = ({ text }) => {
       </Container>
     </>
   )
+}
+
+Blurb.propTypes = {
+  text: PropTypes.string,
+}
+
+Blurb.defaultProps = {
+  text: ``
 }
 
 export default Blurb
