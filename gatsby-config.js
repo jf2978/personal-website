@@ -81,6 +81,9 @@ module.exports = {
             family: `Roboto`,
             subsets: [`latin`]
           },
+          {
+            family: `Permanent Marker`
+          }
         ],
       },
     }
