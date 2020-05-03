@@ -37,4 +37,3 @@ const CTA = ({ label }) => {
 }
 
 export default CTA
-

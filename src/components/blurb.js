@@ -1,25 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Container, Divider } from "semantic-ui-react";
-import blurbStyles from "./styles/blurb.module.scss";
+import { Container, Divider } from "semantic-ui-react"
+import styled from "@emotion/styled"
 
+const Paragraph = styled('p')`
+  font-size: 20px;
+  font-family: 'Cairo', sans-serif;
+  font-style: italic;
+`
 
-// Blurb is a basic text abstraction created in order to leverage component-scoped styles
-// and make it available for future re-use the style if needed later
 const Blurb = ({ text }) => {
 
   return (
-    // fun fact: this <> ... </> syntax is a short syntax for a React "fragment"
-    // Fragments are nice because they give us the benefit of chunking JSX (like containers)
-    // without actually rendering anything (bonus that it cleans up the DOM)
-    <>
-      <Container textAlign="justified">
-        <p className={blurbStyles.text}>
-          {text}
-        </p>
-        <Divider />
-      </Container>
-    </>
+    <Container textAlign="justified">
+      <Paragraph>
+        {text}
+      </Paragraph>
+      <Divider/>
+    </Container>
   )
 }
 
@@ -32,4 +30,3 @@ Blurb.defaultProps = {
 }
 
 export default Blurb
-
