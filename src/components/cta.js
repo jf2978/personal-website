@@ -3,7 +3,7 @@ import { Container} from "semantic-ui-react";
 import styled from "@emotion/styled";
 
 
-const Paragraph = styled('p')`
+const Label = styled('p')`
 
   font-size: 24px;
   font-weight: 600;
@@ -29,9 +29,9 @@ const CTA = ({ label }) => {
 
   return (
     <Container text textAlign="center">
-      <Paragraph>
+      <Label>
         {label}
-      </Paragraph>
+      </Label>
     </Container>
   )
 }
