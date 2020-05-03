@@ -1,0 +1,20 @@
+.cta {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Cairo', sans-serif;
+  display: inline-block;
+}
+
+.cta:after {
+  content: '';
+  width: 0px;
+  height: 4px;
+  display: inline-block;
+  background: black;
+  transition: 300ms;
+}
+
+.cta:hover:after {
+  width: 140%;
+  margin-left: -20%;
+}
