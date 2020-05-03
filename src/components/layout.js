@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import NavBar from "./navbar"
 import { Container } from "semantic-ui-react"
+import "semantic-ui-less/semantic.less";
+
 import layoutStyles from "./styles/layout.module.scss"
 
 const Layout = ({ children }) => {
