@@ -6,6 +6,7 @@ import styled from "@emotion/styled"
 const Title = styled('p')`
   font-size: 150px;
   font-family: 'Permanent Marker';
+  color: whitesmoke;
 `
 
 const HomepageHeader = ({ title }) => {

@@ -7,7 +7,6 @@ import styled from "@emotion/styled";
 
 const StyledContainer = styled(Container)`
   background-image: url(${props => props.background});
-  filter: grayscale(80%);
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;

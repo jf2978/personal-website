@@ -7,6 +7,7 @@ const Paragraph = styled('p')`
   font-size: 20px;
   font-family: 'Cairo', sans-serif;
   font-style: italic;
+  color: whitesmoke;
 `
 
 const Blurb = ({ text }) => {
