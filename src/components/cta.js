@@ -5,17 +5,18 @@ import styled from "@emotion/styled";
 
 const Label = styled('p')`
 
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   font-family: 'Cairo', sans-serif;
   display: inline-block;
+  color: whitesmoke;
 
   &:after {
     content: '';
     width: 0px;
     height: 4px;
     display: inline-block;
-    background: black;
+    background: aqua;
     transition: 300ms;
   }
 
