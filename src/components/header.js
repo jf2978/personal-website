@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Header } from "semantic-ui-react"
+import { Header as SemanticHeader } from "semantic-ui-react"
 import styled from "@emotion/styled"
 
 const Title = styled('p')`
@@ -9,20 +9,20 @@ const Title = styled('p')`
   color: whitesmoke;
 `
 
-const HomepageHeader = ({ title }) => {
+const Header = ({ title }) => {
   return (
-    <Header textAlign="centered">
+    <SemanticHeader textAlign="centered">
       <Title> {title} </Title>
-    </Header>
+    </SemanticHeader>
   )
 }
 
-HomepageHeader.propTypes = {
+Header.propTypes = {
   title: PropTypes.string,
 }
 
-HomepageHeader.defaultProps = {
+Header.defaultProps = {
   name: ``
 }
 
-export default HomepageHeader
+export default Header

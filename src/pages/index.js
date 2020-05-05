@@ -1,4 +1,4 @@
-// Plugins
+// Packages/Plugins
 import React from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
@@ -9,7 +9,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Blurb from "../components/blurb"
 import CTA from "../components/cta"
-import HomepageHeader from "../components/header"
+import Header from "../components/header"
 
 // Assets
 import bg from "../images/bk-background.jpg"
@@ -26,11 +26,9 @@ const Main = styled.div`
 const IndexPage = () => (
   <Layout background={bg}>
     <SEO title="Jeffrey Fabian" />
-    <Main>
-      <HomepageHeader title={headerTitle} />
-      <Blurb text={blurbText} />
-      <CTA label={ctaLabel} />
-    </Main>
+    <Header title={headerTitle} />
+    <Blurb text={blurbText} />
+    <CTA label={ctaLabel} />
   </Layout>
 )
 

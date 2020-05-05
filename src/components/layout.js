@@ -1,11 +1,15 @@
+// Packages/Plugins
 import React from "react"
 import PropTypes from "prop-types"
-import NavBar from "./navbar"
-import { Container } from "semantic-ui-react"
-import "semantic-ui-less/semantic.less";
 import styled from "@emotion/styled";
 
-const StyledContainer = styled(Container)`
+// Components
+import NavBar from "./navbar"
+
+// Assets
+import "semantic-ui-less/semantic.less";
+
+const Container = styled.div`
   background-image: url(${props => props.background});
   height: 100%;
   background-position: center;
@@ -13,12 +17,13 @@ const StyledContainer = styled(Container)`
   background-size: cover;
 `
 
+// Layout is the React component responsible for the navbar links, the logo and
 const Layout = ({ background, children }) => {
   return (
-    <StyledContainer background={background} fluid>
+    <Container background={background} fluid>
       <NavBar></NavBar>
       <main>{children}</main>
-    </StyledContainer>
+    </Container>
   )
 }
 

@@ -1,19 +1,24 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled";
-import { Menu, Image, Grid } from "semantic-ui-react"
+import { Menu, Image } from "semantic-ui-react"
 import { Link } from "gatsby";
 
+// Component Styles
 const Nav = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 
-  // container
-  & {
-    display: inline-flex;
-    justify-content: space-between;
-  }
+const Logo = styled.div`
+  margin: 25px;
+`
 
-  // logo stuff
-
+const MenuContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
 `
 
 const MenuItem = styled(Menu.Item)`
@@ -21,44 +26,20 @@ const MenuItem = styled(Menu.Item)`
   font-family: 'Cairo', sans-serif;
 `
 
-const Logo = styled(Image)`
-  width:150px;
-  height:150px;
-`
-/*
+// JSX
 const NavBar = () => (
-  <>
-    <Nav>
-      <div>
-        <Logo src="https://media.giphy.com/media/l3vR16pONsV8cKkWk/giphy.gif" />
-      </div>
-      <div>
-        <Menu pointing secondary>
-          <MenuItem as={Link} to="/" activeClassName="active" position="right"> Home </MenuItem>
-          <MenuItem as={Link} to="/journey" activeClassName="active"> Journey </MenuItem>
-          <MenuItem as={Link} to="/blog" activeClassName="active"> Blog </MenuItem>
-        </Menu>
-      </div>
-    </Nav>
-  </>
-)*/
-
-const NavBar = () => (
-  <>
-    <Grid columns={3}>
-      <Grid.Column width={1} floated="left">
-        <Logo src="https://media.giphy.com/media/l3vR16pONsV8cKkWk/giphy.gif" />
-      </Grid.Column>
-      <Grid.Column width={9}></Grid.Column>
-      <Grid.Column floated="right">
-        <Menu pointing secondary>
-          <MenuItem as={Link} to="/" activeClassName="active" position="right"> Home </MenuItem>
-          <MenuItem as={Link} to="/journey" activeClassName="active"> Journey </MenuItem>
-          <MenuItem as={Link} to="/blog" activeClassName="active"> Blog </MenuItem>
-        </Menu>
-      </Grid.Column>
-    </Grid>
-  </>
+  <Nav>
+    <Logo>
+      <Image centered width={150} height={150} src="https://media.giphy.com/media/l3vR16pONsV8cKkWk/giphy.gif" />
+    </Logo>
+    <MenuContainer>
+      <Menu pointing secondary>
+        <MenuItem as={Link} to="/" activeClassName="active" position="right"> Home </MenuItem>
+        <MenuItem  as={Link} to="/blog" activeClassName="active"> Journey </MenuItem>
+        <MenuItem as={Link} to="/blog" activeClassName="active"> Blog </MenuItem>
+      </Menu>
+    </MenuContainer>
+  </Nav>
 )
 
 NavBar.propTypes = {
