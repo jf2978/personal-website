@@ -1,8 +1,8 @@
 // Packages/Plugins
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import { Container } from "semantic-ui-react"
+import { Button, Divider, Transition } from "semantic-ui-react"
 
 // Components
 import Layout from "../components/layout"
@@ -23,13 +23,28 @@ const Main = styled.div`
   justify-content: center;
 `
 
-const IndexPage = () => (
-  <Layout background={bg}>
-    <SEO title="Jeffrey Fabian" />
-    <Header title={headerTitle} />
-    <Blurb text={blurbText} />
-    <CTA label={ctaLabel} />
-  </Layout>
-)
+const IndexPage = () => {
+
+  const [visible, setVisiblity] = useState(false)
+  const toggleVisibility = () => setVisiblity(!visible)
+
+  return (
+    <Layout background={bg}>
+      <Button
+          content={visible ? 'Hide' : 'Show'}
+          onClick={toggleVisibility}
+        />
+      <Transition visible={visible} animation="fade" duration={500}>
+        <Main>
+          <SEO title="Jeffrey Fabian" />
+          <Header title={headerTitle} />
+          <Blurb text={blurbText} />
+          <CTA label={ctaLabel} />
+        </Main>
+      </Transition>
+    </Layout>
+  )
+
+}
 
 export default IndexPage
