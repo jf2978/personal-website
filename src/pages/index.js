@@ -25,22 +25,15 @@ const Main = styled.div`
 
 const IndexPage = () => {
 
-  const [visible, setVisiblity] = useState(false)
-  const toggleVisibility = () => setVisiblity(!visible)
-
   return (
     <Layout background={bg}>
-      <Button
-          content={visible ? 'Hide' : 'Show'}
-          onClick={toggleVisibility}
-        />
-      <Transition visible={visible} animation="fade" duration={500}>
-        <Main>
-          <SEO title="Jeffrey Fabian" />
-          <Header title={headerTitle} />
-          <Blurb text={blurbText} />
-          <CTA label={ctaLabel} />
-        </Main>
+      <Transition transitionOnMount animation="fade up" duration={1000}>
+          <Main>
+            <SEO title="Jeffrey Fabian" />
+            <Header title={headerTitle} />
+            <Blurb text={blurbText} />
+            <CTA label={ctaLabel} />
+          </Main>
       </Transition>
     </Layout>
   )
