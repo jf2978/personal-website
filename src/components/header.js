@@ -6,6 +6,7 @@ import styled from "@emotion/styled"
 const Title = styled('p')`
   font-size: 150px;
   font-family: 'Permanent Marker';
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   color: whitesmoke;
 `
 
