@@ -33,7 +33,7 @@ const NavBar = () => (
       <Image centered width={150} height={150} src="https://media.giphy.com/media/l3vR16pONsV8cKkWk/giphy.gif" />
     </Logo>
     <MenuContainer>
-      <Menu pointing secondary>
+      <Menu inverted pointing secondary>
         <MenuItem as={Link} to="/" activeClassName="active" position="right"> Home </MenuItem>
         <MenuItem  as={Link} to="/blog" activeClassName="active"> Journey </MenuItem>
         <MenuItem as={Link} to="/blog" activeClassName="active"> Blog </MenuItem>

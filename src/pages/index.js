@@ -1,5 +1,5 @@
 // Packages/Plugins
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { Button, Divider, Transition } from "semantic-ui-react"
@@ -25,16 +25,27 @@ const Main = styled.div`
 
 const IndexPage = () => {
 
+  const [visible, setVisibility] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisibility(true)
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Layout background={bg}>
-      <Transition transitionOnMount animation="fade up" duration={1000}>
-          <Main>
-            <SEO title="Jeffrey Fabian" />
-            <Header title={headerTitle} />
-            <Blurb text={blurbText} />
-            <CTA label={ctaLabel} />
-          </Main>
-      </Transition>
+      { visible && (
+        <Transition transitionOnMount animation="fade up" duration={1000}>
+            <Main>
+              <SEO title="Jeffrey Fabian" />
+              <Header title={headerTitle} />
+              <Blurb text={blurbText} />
+              <CTA label={ctaLabel} />
+            </Main>
+        </Transition>
+      )}
     </Layout>
   )
 

@@ -10,6 +10,7 @@ const Label = styled('p')`
   font-family: 'Cairo', sans-serif;
   display: inline-block;
   color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
   &:after {
     content: '';
