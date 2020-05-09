@@ -2,6 +2,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled";
+import VideoBg from "reactjs-videobg";
 
 // Components
 import NavBar from "./navbar"
@@ -20,7 +21,10 @@ const Container = styled.div`
 // Layout is the React component responsible for the navbar links, the logo and
 const Layout = ({ background, children }) => {
   return (
-    <Container background={background} fluid>
+    <Container fluid>
+      <VideoBg>
+        <VideoBg.Source src={background} type="video/mp4" />
+      </VideoBg>;
       <NavBar></NavBar>
       <main>{children}</main>
     </Container>
